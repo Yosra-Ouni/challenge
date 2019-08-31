@@ -1,37 +1,74 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 .container{
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
   font-family: Helvetica, sans-serif;
-  margin-top: 1px;
-  margin-bottom: 1px;
   flex-wrap: wrap;
   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+
   .row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     margin-left: 1px;
+    border-radius: 5px;
 
-    background-color: #f1f1f1;
     .column{
       display: flex;
       flex-direction: column;
       width: 100%;
-      
     }
   }
 }
-.button {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 10px;
-  border-radius: 8px;
+
+.title {
+  color: #fa3292;
+  font-weight: bold;
 }
-.btn {   
+
+.btn {
+  min-width: 100px;
+  max-width: 200px;
+  display: inline-block;
+  margin: 0;
+  min-width: 100px;
+  padding: .5rem;
+  border: none;
+  border-radius: 2px;
+  background: #fa3292;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: capitalize;
   text-decoration: none;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  -webkit-transition-property: border-color,background-color,color;
+  transition-property: border-color,background-color,color;
 }
 
 .btn:hover {
-  background-color:blue;
-  color: white;
+  background-color: #fa32e1;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }

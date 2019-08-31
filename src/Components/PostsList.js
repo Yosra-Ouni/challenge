@@ -14,38 +14,33 @@ class PostsList extends React.Component {
       .then(data => this.setState({ data }))
   }
   render() {
-    const displayData = () => {
+    const DataList = () => {
       let dataRow = []
       if (this.state.data) {
-        dataRow.push(<h3>List of Posts</h3>)
-        this.state.data.map(post => {
-          dataRow.push(
-            <li key={post.id}>
-              <div class="container">
-                <div class="row">
-                  <div class="column">
-                    <p>Title:</p>
+        dataRow = this.state.data.map(post => {
+          return(
+              <div  key={post.id} className="container">
+                <div className="row">
+                  <div className="column">
+                    <span className="title">Title:</span>
                     <p>{post.title}</p>
                   </div>
-                  <div class="column">
-                    <p>Description:</p>
+                  <div className="column">
+                    <span className="title">Description:</span>
                     <p>{post.body}</p>
-                    <div class="button">
-                      <button class="btn"><Link to={`/${post.id}`}>Details</Link></button>
-                    </div>
+                    <button className="btn"><Link to={`/${post.id}`}>Details</Link></button>
                   </div>
                 </div>
               </div>
-            </li>)
+            )
         })
       }
       return dataRow
     }
     return (
-      <div>
-        <ul>
-          {displayData()}
-        </ul>
+      <div style={{padding: '20px'}}>
+        <h3>List of Posts</h3>
+        <DataList/>
       </div>
     )
   }
