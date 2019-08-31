@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class PostDetails extends React.Component {
   state = {
@@ -18,7 +18,7 @@ class PostDetails extends React.Component {
           .then((user) => {
             this.setState({ user, post })
           })
-        })
+      })
   }
   render() {
     console.log(this.state)
@@ -29,8 +29,8 @@ class PostDetails extends React.Component {
             <div>{this.state.post.title}</div>
             <div>{this.state.user.name}</div>
             <div>{this.state.post.body}</div>
-            <br/>
-            <button><Link to={'/'}>Go back to post</Link></button>
+            <br />
+            <button class="btn"><Link to={'/'}>Go back to post</Link></button>
           </div>
         )
       } else {
