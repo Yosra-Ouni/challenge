@@ -21,29 +21,29 @@ class PostDetails extends React.Component {
       })
   }
   render() {
-    console.log(this.state)
-    const showDetails = () => {
+    const ShowDetails = () => {
       if (this.state.user && this.state.post) {
         return (
           <div>
-            <div>{this.state.post.title}</div>
-            <div>{this.state.user.name}</div>
-            <div>{this.state.post.body}</div>
-            <br />
-            <button class="btn"><Link to={'/'}>Go back to post</Link></button>
-          </div>
-        )
-      } else {
-        return (
-          <div>
-            no data to show
+            <span className="title">User:</span>
+            <p>{this.state.user.name}</p>
+            <span className="title">Title:</span>
+            <p>{this.state.post.title}</p>
+            <span className="title">Post:</span>
+            <p>{this.state.post.body}</p>
+            <button className="btn"><Link to={'/'}>Go back to posts</Link></button>
           </div>
         )
       }
+      return (
+        <div>
+          no data to show
+        </div>
+      )
     }
     return (
       <div>
-        {showDetails()}
+        <ShowDetails />
       </div>
     )
   }
