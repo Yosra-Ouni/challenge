@@ -18,7 +18,6 @@ class PostsList extends React.Component {
       let dataRow=[]
       if(this.state.data) {
         this.state.data.map( post =>{
-          console.log(post)
           dataRow.push( <li key={post.id}>
             <Link to={`/${post.id}`}>{post.title}</Link>
           </li>)
